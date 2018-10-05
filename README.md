@@ -91,3 +91,27 @@ python random_agent.py
   - 一组奖励<a href="https://www.codecogs.com/eqnedit.php?latex=\mathcal{R}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathcal{R}" title="\mathcal{R}" /></a>
   - 环境的一步动态特性
   - 折扣率  [0,1]γ∈[0,1]
+
+## 贝尔曼方程
+在这个网格世界示例中，一旦智能体选择一个动作，
+
+- 它始终沿着所选方向移动（而一般 MDP 则不同，智能体并非始终能够完全控制下个状态将是什么）
+- 可以确切地预测奖励（而一般 MDP 则不同，奖励是从概率分布中随机抽取的）。
+在这个简单示例中，我们发现任何状态的值可以计算为即时奖励和下个状态（折扣）值的和。
+
+Alexis 提到，对于一般 MDP，我们需要使用期望值，因为通常即时奖励和下个状态无法准确地预测。的确，我们在之前的课程中发现，奖励和下个状态是根据 MDP 的一步动态特性选择的。在这种情况下，奖励 r 和下个状态 s'是从（条件性）概率分布 p(s',r|s,a) 中抽取的，贝尔曼预期方程（对于 <a href="https://www.codecogs.com/eqnedit.php?latex=v_\pi" target="_blank"><img src="https://latex.codecogs.com/gif.latex?v_\pi" title="v_\pi" /></a>  ）表示了任何状态 s 对于_预期即时奖励和下个状态的预期_值的值：
+<a href="https://www.codecogs.com/eqnedit.php?latex=v_\pi(s)&space;=&space;\text{}&space;\mathbb{E}_\pi[R_{t&plus;1}&space;&plus;&space;\gamma&space;v_\pi(S_{t&plus;1})|S_t&space;=s]." target="_blank"><img src="https://latex.codecogs.com/gif.latex?v_\pi(s)&space;=&space;\text{}&space;\mathbb{E}_\pi[R_{t&plus;1}&space;&plus;&space;\gamma&space;v_\pi(S_{t&plus;1})|S_t&space;=s]." title="v_\pi(s) = \text{} \mathbb{E}_\pi[R_{t+1} + \gamma v_\pi(S_{t+1})|S_t =s]." /></a>
+
+**计算预期值**
+
+如果智能体的策略 π 是确定性策略，智能体在状态 s 选择动作 π(s)，贝尔曼预期方程可以重写为两个变量 (s' 和 r) 的和：
+<a href="https://www.codecogs.com/eqnedit.php?latex=v_\pi(s)&space;=&space;\sum_{s'\in\mathcal{S}^&plus;,&space;r\in\mathcal{R}}p(s',r|s,\pi(s))(r&plus;\gamma&space;v_\pi(s'))" target="_blank"><img src="https://latex.codecogs.com/gif.latex?v_\pi(s)&space;=&space;\sum_{s'\in\mathcal{S}^&plus;,&space;r\in\mathcal{R}}p(s',r|s,\pi(s))(r&plus;\gamma&space;v_\pi(s'))" title="v_\pi(s) = \sum_{s'\in\mathcal{S}^+, r\in\mathcal{R}}p(s',r|s,\pi(s))(r+\gamma v_\pi(s'))" /></a>
+
+在这种情况下，我们将奖励和下个状态的折扣值之和 (r+\gamma v_\pi(s'))与相应的概率 p(s′,r∣s,π(s)) 相乘，并将所有概率相加得出预期值。
+如果智能体的策略 \piπ 是随机性策略，智能体在状态 ss 选择动作 aa 的概率是 \pi(a|s)π(a∣s)，贝尔曼预期方程可以重写为三个变量（s′ 、r 和 a）的和：
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=v_\pi(s)&space;=&space;\sum_{s'\in\mathcal{S}^&plus;,&space;r\in\mathcal{R},a\in\mathcal{A}(s)}\pi(a|s)p(s',r|s,a)(r&plus;\gamma&space;v_\pi(s'))" target="_blank"><img src="https://latex.codecogs.com/gif.latex?v_\pi(s)&space;=&space;\sum_{s'\in\mathcal{S}^&plus;,&space;r\in\mathcal{R},a\in\mathcal{A}(s)}\pi(a|s)p(s',r|s,a)(r&plus;\gamma&space;v_\pi(s'))" title="v_\pi(s) = \sum_{s'\in\mathcal{S}^+, r\in\mathcal{R},a\in\mathcal{A}(s)}\pi(a|s)p(s',r|s,a)(r+\gamma v_\pi(s'))" /></a>
+
+在这种情况下，我们将奖励和下个状态的折扣值之和 <a href="https://www.codecogs.com/eqnedit.php?latex=(r&plus;\gamma&space;v_\pi(s'))" target="_blank"><img src="https://latex.codecogs.com/gif.latex?(r&plus;\gamma&space;v_\pi(s'))" title="(r+\gamma v_\pi(s'))" /></a>与相应的概率π(a∣s)p(s′,r∣s,a) 相乘，并将所有概率相加得出预期值。
+
+
