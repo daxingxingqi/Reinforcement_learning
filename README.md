@@ -77,5 +77,26 @@ python random_agent.py
 -（请参阅第 1 部分和第 2 部分，以查看在现实问题中如何指定奖励信号的示例。）
 
 **累积奖励**
-- **在时间步** t 的回报是$G_t := R_{t+1} + R_{t+2} + R_{t+3} + \ldots G$
+- **在时间步** t 的回报是<a href="https://www.codecogs.com/eqnedit.php?latex=G_t&space;:=&space;R_{t&plus;1}&space;&plus;&space;R_{t&plus;2}&space;&plus;&space;R_{t&plus;3}&space;&plus;&space;\ldots" target="_blank"><img src="https://latex.codecogs.com/gif.latex?G_t&space;:=&space;R_{t&plus;1}&space;&plus;&space;R_{t&plus;2}&space;&plus;&space;R_{t&plus;3}&space;&plus;&space;\ldots" title="G_t := R_{t+1} + R_{t+2} + R_{t+3} + \ldots" /></a>
 - 智能体选择动作的目标是最大化预期（折扣）回报。（注意：折扣将在下部分讲解。）
+
+**折扣回报**
+- 在时间步t的折扣回报是 <a href="https://www.codecogs.com/eqnedit.php?latex=G_t&space;:=&space;R_{t&plus;1}&space;&plus;&space;\gamma&space;R_{t&plus;2}&space;&plus;&space;\gamma^2&space;R_{t&plus;3}&space;&plus;&space;\ldots" target="_blank"><img src="https://latex.codecogs.com/gif.latex?G_t&space;:=&space;R_{t&plus;1}&space;&plus;&space;\gamma&space;R_{t&plus;2}&space;&plus;&space;\gamma^2&space;R_{t&plus;3}&space;&plus;&space;\ldots" title="G_t := R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \ldots" /></a>
+- 折扣回报 γ 是你设置的值，以便进一步优化智能体的目标。
+  - 它必须指定 0≤γ≤1。
+  - 如果 γ=0，智能体只关心最即时的奖励。
+  - 如果 γ=1，回报没有折扣。
+  - γ 的值越大，智能体越关心遥远的未来。γ 的值越小，折扣程度越大，在最极端的情况下，智能体只关心最即时的奖励。
+
+**MDPs和一步动态特性**
+- **状态空间**<a href="https://www.codecogs.com/eqnedit.php?latex=\mathcal{S}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathcal{S}" title="\mathcal{S}" /></a>是所有（非终止）状态的集合。
+  - 在阶段性任务中，我们使用<a href="https://www.codecogs.com/eqnedit.php?latex=\mathcal{S}^&plus;" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathcal{S}^&plus;" title="\mathcal{S}^+" /></a> 表示所有状态集合，包括终止状态。
+- **动作空间** <a href="https://www.codecogs.com/eqnedit.php?latex=\mathcal{A}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathcal{A}" title="\mathcal{A}" /></a>是潜在动作的集合。 (此外， <a href="https://www.codecogs.com/eqnedit.php?latex=\mathcal{A}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathcal{A}" title="\mathcal{A}" /></a>(s)是指在状s∈<a href="https://www.codecogs.com/eqnedit.php?latex=\mathcal{S}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathcal{S}" title="\mathcal{S}" /></a>的潜在动作集合。)
+- (请参阅第 2 部分，了解如何在回收机器人示例中指定奖励信号。)
+- 环境的**一步动态特性**会判断环境在每个时间步如何决定状态和奖励。可以通过指定每个潜在 s', r, s, and  a 的 <a href="https://www.codecogs.com/eqnedit.php?latex=p(s',r|s,a)&space;\doteq&space;\mathbb{P}(S_{t&plus;1}=s',&space;R_{t&plus;1}=r|S_{t}&space;=&space;s,&space;A_{t}=a)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?p(s',r|s,a)&space;\doteq&space;\mathbb{P}(S_{t&plus;1}=s',&space;R_{t&plus;1}=r|S_{t}&space;=&space;s,&space;A_{t}=a)" title="p(s',r|s,a) \doteq \mathbb{P}(S_{t+1}=s', R_{t+1}=r|S_{t} = s, A_{t}=a)" /></a> 定义动态特性。
+- 一个**（有限）马尔可夫决策过程 (MDP)** 由以下各项定义：
+  - 一组（有限的）状态 <a href="https://www.codecogs.com/eqnedit.php?latex=\mathcal{S}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathcal{S}" title="\mathcal{S}" /></a>（对于阶段性任务，则是 <a href="https://www.codecogs.com/eqnedit.php?latex=\mathcal{S}^&plus;" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathcal{S}^&plus;" title="\mathcal{S}^+" /></a>）
+  - 一组（有限的）动作 <a href="https://www.codecogs.com/eqnedit.php?latex=\mathcal{A}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathcal{A}" title="\mathcal{A}" /></a>
+  - 一组奖励<a href="https://www.codecogs.com/eqnedit.php?latex=\mathcal{R}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathcal{R}" title="\mathcal{R}" /></a>
+  - 环境的一步动态特性
+  - 折扣率  [0,1]γ∈[0,1]
