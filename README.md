@@ -107,8 +107,8 @@ Alexis 提到，对于一般 MDP，我们需要使用期望值，因为通常即
 如果智能体的策略 π 是确定性策略，智能体在状态 s 选择动作 π(s)，贝尔曼预期方程可以重写为两个变量 (s' 和 r) 的和：
 <a href="https://www.codecogs.com/eqnedit.php?latex=v_\pi(s)&space;=&space;\sum_{s'\in\mathcal{S}^&plus;,&space;r\in\mathcal{R}}p(s',r|s,\pi(s))(r&plus;\gamma&space;v_\pi(s'))" target="_blank"><img src="https://latex.codecogs.com/gif.latex?v_\pi(s)&space;=&space;\sum_{s'\in\mathcal{S}^&plus;,&space;r\in\mathcal{R}}p(s',r|s,\pi(s))(r&plus;\gamma&space;v_\pi(s'))" title="v_\pi(s) = \sum_{s'\in\mathcal{S}^+, r\in\mathcal{R}}p(s',r|s,\pi(s))(r+\gamma v_\pi(s'))" /></a>
 
-在这种情况下，我们将奖励和下个状态的折扣值之和 (r+\gamma v_\pi(s'))与相应的概率 p(s′,r∣s,π(s)) 相乘，并将所有概率相加得出预期值。
-如果智能体的策略 \piπ 是随机性策略，智能体在状态 ss 选择动作 aa 的概率是 \pi(a|s)π(a∣s)，贝尔曼预期方程可以重写为三个变量（s′ 、r 和 a）的和：
+在这种情况下，我们将奖励和下个状态的折扣值之和<a href="https://www.codecogs.com/eqnedit.php?latex=(r&plus;\gamma&space;v_\pi(s'))" target="_blank"><img src="https://latex.codecogs.com/gif.latex?(r&plus;\gamma&space;v_\pi(s'))" title="(r+\gamma v_\pi(s'))" /></a>与相应的概率 p(s′,r∣s,π(s)) 相乘，并将所有概率相加得出预期值。
+如果智能体的策略 π 是随机性策略，智能体在状态 s 选择动作 a 的概率是 π(a∣s)，贝尔曼预期方程可以重写为三个变量（s′ 、r 和 a）的和：
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=v_\pi(s)&space;=&space;\sum_{s'\in\mathcal{S}^&plus;,&space;r\in\mathcal{R},a\in\mathcal{A}(s)}\pi(a|s)p(s',r|s,a)(r&plus;\gamma&space;v_\pi(s'))" target="_blank"><img src="https://latex.codecogs.com/gif.latex?v_\pi(s)&space;=&space;\sum_{s'\in\mathcal{S}^&plus;,&space;r\in\mathcal{R},a\in\mathcal{A}(s)}\pi(a|s)p(s',r|s,a)(r&plus;\gamma&space;v_\pi(s'))" title="v_\pi(s) = \sum_{s'\in\mathcal{S}^+, r\in\mathcal{R},a\in\mathcal{A}(s)}\pi(a|s)p(s',r|s,a)(r+\gamma v_\pi(s'))" /></a>
 
