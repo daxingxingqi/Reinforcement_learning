@@ -44,7 +44,9 @@ python random_agent.py
 建议你下载[此表格](https://github.com/udacity/rl-cheatsheet/blob/master/cheatsheet.pdf)，其中包含我们将在这门课程中使用的所有记法和算法。请仅将此表格作为你的笔记补充内容！:)
 
 你还可以在[该教科书](https://s3.cn-north-1.amazonaws.com.cn/static-documents/nd101/MLND+documents/suttonbookdraft2018jan1.pdf)第一章节之前的页面中找到另一个实用记法指南。
-
+## MDP
+<div align=center><img width="650" src=resource/6.png></div>
+<div align=center><img width="650" src=resource/7.png></div>
 **有限MDP**
 请使用[此链接](https://github.com/openai/gym/wiki/Table-of-environments)获取 OpenAI Gym 中的可用环境。
 
