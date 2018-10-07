@@ -150,8 +150,6 @@ Alexis 提到，对于一般 MDP，我们需要使用期望值，因为通常即
 - <a href="https://www.codecogs.com/eqnedit.php?latex=v_*" target="_blank"><img src="https://latex.codecogs.com/gif.latex?v_*" title="v_*" /></a>的贝尔曼最优性方程是：<a href="https://www.codecogs.com/eqnedit.php?latex=v_*(s)&space;=&space;\max_{a&space;\in&space;\mathcal{A}(s)}&space;\mathbb{E}[R_{t&plus;1}&space;&plus;&space;\gamma&space;v_*(S_{t&plus;1})&space;|&space;S_t=s]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?v_*(s)&space;=&space;\max_{a&space;\in&space;\mathcal{A}(s)}&space;\mathbb{E}[R_{t&plus;1}&space;&plus;&space;\gamma&space;v_*(S_{t&plus;1})&space;|&space;S_t=s]" title="v_*(s) = \max_{a \in \mathcal{A}(s)} \mathbb{E}[R_{t+1} + \gamma v_*(S_{t+1}) | S_t=s]" /></a>
 - <a href="https://www.codecogs.com/eqnedit.php?latex=q_*" target="_blank"><img src="https://latex.codecogs.com/gif.latex?q_*" title="q_*" /></a> 的贝尔曼最优性方程是：<a href="https://www.codecogs.com/eqnedit.php?latex=q_*(s,a)&space;=&space;\mathbb{E}[R_{t&plus;1}&space;&plus;&space;\gamma&space;\max_{a'\in\mathcal{A}(S_{t&plus;1})}q_*(S_{t&plus;1},a')&space;|&space;S_t=s,&space;A_t=a]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?q_*(s,a)&space;=&space;\mathbb{E}[R_{t&plus;1}&space;&plus;&space;\gamma&space;\max_{a'\in\mathcal{A}(S_{t&plus;1})}q_*(S_{t&plus;1},a')&space;|&space;S_t=s,&space;A_t=a]" title="q_*(s,a) = \mathbb{E}[R_{t+1} + \gamma \max_{a'\in\mathcal{A}(S_{t+1})}q_*(S_{t+1},a') | S_t=s, A_t=a]" /></a>
 ### 推导
-<div align=center><img width="650" src=resource/1.png></div>
-<div align=center><img width="650" src=resource/2.png></div>
-<div align=center><img width="650" src=resource/3.png></div>
-<div align=center><img width="650" src=resource/4.png></div>
-<div align=center><img width="650" src=resource/5.png></div>
+### [动态规划推导]()
+
+
