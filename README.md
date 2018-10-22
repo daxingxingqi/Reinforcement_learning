@@ -152,13 +152,21 @@ Alexis 提到，对于一般 MDP，我们需要使用期望值，因为通常即
 ### 推导
 ### [动态规划推导](https://github.com/daxingxingqi/Reinforcement_learning/blob/master/dynamic/%E6%8E%A8%E5%AF%BC.ipynb)
 ## 蒙特卡洛方法
+实例代码-https://github.com/daxingxingqi/Reinforcement_learning/tree/master/mc_predict
+
 **MC 预测：状态值**
+
 <div align=center><img width="650" src=resource/mc-pred-state.png></div>
+
 **MC 预测：动作值**
+
 <div align=center><img width="650" src=resource/mc-pred-action.png></div>
+
 **广义策略迭代**
+
 - 旨在解决控制问题的算法会通过与环境互动确定最优策略 π∗。
 - 广义策略迭代 (GPI) 是指通过交替地进行策略评估和和改进步骤搜索最优策略的广义方法。我们在这门课程中讲解的所有强化学习方法都可以归类为 GPI。
+
 **MC 控制：增量均值**
 
 **MC 控制：策略评估**
