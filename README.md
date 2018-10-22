@@ -151,5 +151,22 @@ Alexis 提到，对于一般 MDP，我们需要使用期望值，因为通常即
 - <a href="https://www.codecogs.com/eqnedit.php?latex=q_*" target="_blank"><img src="https://latex.codecogs.com/gif.latex?q_*" title="q_*" /></a> 的贝尔曼最优性方程是：<a href="https://www.codecogs.com/eqnedit.php?latex=q_*(s,a)&space;=&space;\mathbb{E}[R_{t&plus;1}&space;&plus;&space;\gamma&space;\max_{a'\in\mathcal{A}(S_{t&plus;1})}q_*(S_{t&plus;1},a')&space;|&space;S_t=s,&space;A_t=a]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?q_*(s,a)&space;=&space;\mathbb{E}[R_{t&plus;1}&space;&plus;&space;\gamma&space;\max_{a'\in\mathcal{A}(S_{t&plus;1})}q_*(S_{t&plus;1},a')&space;|&space;S_t=s,&space;A_t=a]" title="q_*(s,a) = \mathbb{E}[R_{t+1} + \gamma \max_{a'\in\mathcal{A}(S_{t+1})}q_*(S_{t+1},a') | S_t=s, A_t=a]" /></a>
 ### 推导
 ### [动态规划推导](https://github.com/daxingxingqi/Reinforcement_learning/blob/master/dynamic/%E6%8E%A8%E5%AF%BC.ipynb)
+## 蒙特卡洛方法
+**MC 预测：状态值**
+<div align=center><img width="650" src=resource/mc-pred-state.png></div>
+**MC 预测：动作值**
+<div align=center><img width="650" src=resource/mc-pred-action.png></div>
+**广义策略迭代**
+- 旨在解决控制问题的算法会通过与环境互动确定最优策略 π∗。
+- 广义策略迭代 (GPI) 是指通过交替地进行策略评估和和改进步骤搜索最优策略的广义方法。我们在这门课程中讲解的所有强化学习方法都可以归类为 GPI。
+**MC 控制：增量均值**
 
+**MC 控制：策略评估**
 
+**MC 控制：策略改进**
+
+**探索与利用**
+<div align=center><img width="650" src=resource/mc-control-glie.png></div>
+
+**MC 控制：常量 α**
+<div align=center><img width="650" src=resource/mc-control-constant-a.png></div>
