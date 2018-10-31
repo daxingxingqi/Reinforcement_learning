@@ -1,4 +1,5 @@
 # Reinforcement_learning
+# [Reinforcement learning cheat sheet]（https://github.com/daxingxingqi/Reinforcement_learning/blob/master/cheatsheet.pdf）
 ## 准备
 **程序安装**
 
