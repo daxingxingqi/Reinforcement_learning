@@ -1,6 +1,7 @@
-# Reinforcement_learning
-# [Reinforcement learning cheat sheet](https://github.com/daxingxingqi/Reinforcement_learning/blob/master/cheatsheet.pdf)
-## 准备
+# Reinforcement learning cheat sheet
+在下面的链接中是强化学习基本算法的总结（来自优达学院）
+https://github.com/daxingxingqi/Reinforcement_learning/blob/master/cheatsheet.pdf
+# 准备
 **程序安装**
 
 你不需要在你的计算机上安装 OpenAI Gym，你可以在课堂里完成所有的编程实现过程。你可以通过查看该 [GitHub 代码库](https://github.com/openai/gym.git)详细了解 OpenAI Gym。
@@ -45,8 +46,4 @@ python random_agent.py
 建议你下载[此表格](https://github.com/udacity/rl-cheatsheet/blob/master/cheatsheet.pdf)，其中包含我们将在这门课程中使用的所有记法和算法。请仅将此表格作为你的笔记补充内容！:)
 
 你还可以在[该教科书](https://s3.cn-north-1.amazonaws.com.cn/static-documents/nd101/MLND+documents/suttonbookdraft2018jan1.pdf)第一章节之前的页面中找到另一个实用记法指南。
-## MDP
-<div align=center><img width="650" src=resource/6.png></div>
-<div align=center><img width="650" src=resource/7.png></div>
-**有限MDP**
-请使用[此链接](https://github.com/openai/gym/wiki/Table-of-environments)获取 OpenAI Gym 中的可用环境。
+
