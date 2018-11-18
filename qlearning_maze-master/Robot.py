@@ -42,14 +42,16 @@ class Robot(object):
         """
         if self.testing:
             # TODO 1. No random choice when testing
-            pass 
+            self.epsilon = 0
         else:
             # TODO 2. Update parameters when learning
-            self.epsilon = self.epsilon/(self.t+1)
-            self.t += 1
-                
-           
-
+            '''
+            #self.epsilon = self.epsilon/(self.t+1)
+            #self.t += 1
+            你这里的 epsilon 衰减太快了，小车行动5次后，就几乎不随机选择动作了（0.5*(6!)=0），这样会导致小车不能很好地对周围环境进行探索～
+请尝试减慢 epsilon 衰减速度（例如每回合以0.99的指数进行衰减），或者使用cos函数作为衰减函数～
+            '''
+            self.epsilon *= 0.99
         return self.epsilon
 
     def sense_state(self):
@@ -58,8 +60,7 @@ class Robot(object):
         """
 
         # TODO 3. Return robot's current state
-        current_state = self.maze.sense_robot()
-        return current_state# 返回当前位置
+        return self.maze.sense_robot()# 返回当前位置
 
     def create_Qtable_line(self, state):
         """
@@ -70,10 +71,14 @@ class Robot(object):
         # Qtable[state] ={'u':xx, 'd':xx, ...}
         # If Qtable[state] already exits, then do
         # not change it.
+        '''
+        注意，在 Python 中，0. 和 0 是两个不同类型的数据，前者为 float 类型，后者为 int 类型。那么在这里，我们应该使用前者来对Qtable 进行初始化。
+        '''
         if state in self.Qtable: # continue 是跳过， pass 是什么也不做，如果state在Qtable中什么也不做
             pass
         else:
-            self.Qtable[state] = {'u': 0,'d':0,'l':0,'r':0} #如果不存在，创建Qtable[state]，并初始化各个动作的值为0
+            self.Qtable[state] = {'u': 0.,'d':0.,'l':0.,'r':0.} #如果不存在，创建Qtable[state]，并初始化各个动作的值为0
+        
         
 
     def choose_action(self):
@@ -94,8 +99,7 @@ class Robot(object):
         if self.learning:
             if is_random_exploration():
                 # TODO 6. Return random choose aciton
-                action = random.choice(self.valid_actions)
-                return action
+                return random.choice(self.valid_actions)
             else:
                 # TODO 7. Return action with highest q value
                 return max(self.Qtable[self.state], key=self.Qtable[self.state].get)
@@ -127,7 +131,8 @@ class Robot(object):
 
         action = self.choose_action() # choose action for this state
         reward = self.maze.move_robot(action) # move robot for given action
-
+            
+        
         next_state = self.sense_state() # get next state
         self.create_Qtable_line(next_state) # create q table line for next state
 
