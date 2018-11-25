@@ -1,9 +1,9 @@
 同时，目前强化学习在研究领域也是非常热门的方向，前有 DeepMind 的 AlphaGo 在围棋领域下赢世界顶级选手柯洁，最近 OpenAI 的 Dota 机器人已经能够操控5个AI与人类团队进行5v5对决，此外还有星际争霸2也开放了 API 用于强化学习的研究，AlphaGo Zero 更是一鸣惊人。如果你还有进一步的兴趣，可以参考如下补充资料：
-经典读物：Reinforcement Learning: An Introduction
+- 经典读物：Reinforcement Learning: An Introduction
 https://s3-us-west-1.amazonaws.com/udacity-dlnfd/suttonbookdraft2018jan1.pdf
-伯克利 AI 课程：http://ai.berkeley.edu/lecture_videos.html
-David Silver 主讲的强化学习课程：http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching.html
-入门强化学的博文：https://mpatacchiola.github.io/blog/2016/12/09/dissecting-reinforcement-learning.html
+- 伯克利 AI 课程：http://ai.berkeley.edu/lecture_videos.html
+- David Silver 主讲的强化学习课程：http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching.html
+- 入门强化学的博文：https://mpatacchiola.github.io/blog/2016/12/09/dissecting-reinforcement-learning.html
 
 ## 1. 问题描述
 
